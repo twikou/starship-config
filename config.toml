@@ -1,0 +1,48 @@
+format = """
+${custom.whoami}\
+$directory\
+$git_branch\
+$git_status\
+$python\
+$cmd_duration\
+\n$character"""
+
+[custom.whoami]
+format = '[  $output ](fg:#a0a9cb bg:#1d2230)'
+when = true
+
+[cmd_duration]
+format = ' [$duration](bold yellow)'
+
+[directory]
+style = "purple"
+format = "[  $path]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙"
+"documents" = "󰈙"
+"Download" = ""
+"downloads" = ""
+"Pictures" = ""
+
+[git_branch]
+symbol = ""
+style = ""
+format = '[ [ $symbol $branch ](fg:blue bg:#1d2230)]($style)'
+
+[git_status]
+style = "bg:#394260"
+format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
+
+[character]
+success_symbol = "[ »](green)"
+error_symbol = "[ »](red)"
+
+[python]
+format = '[ ${symbol} $virtualenv]($style)'
+symbol = ""
+style = "yellow"
+
+
